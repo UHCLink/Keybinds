@@ -1,0 +1,22 @@
+{
+  "os": "Debian 13 (trixie), Linux x86_64",
+  "versions": {
+    "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)",
+    "makensis": "v3.11-1",
+    "gcc": "x86_64-w64-mingw32-gcc (GCC) 14-posix",
+    "windres": "GNU windres (GNU Binutils) 2.44",
+    "linker": "GNU ld (GNU Binutils) 2.44",
+    "osslsigncode": "osslsigncode 2.9, using:",
+    "packages": {
+      "nsis": "3.11-1",
+      "nsis-common": "3.11-1",
+      "gcc-mingw-w64-base": "14.2.0-19+27+b1",
+      "gcc-mingw-w64-x86-64-posix": "14.2.0-19+27+b1",
+      "gcc-mingw-w64-x86-64-posix-runtime": "14.2.0-19+27+b1",
+      "binutils-mingw-w64-x86-64": "2.44-3+12+b1",
+      "mingw-w64-common": "12.0.0-5",
+      "mingw-w64-x86-64-dev": "12.0.0-5",
+      "osslsigncode": "2.9-2"
+    }
+  }
+}

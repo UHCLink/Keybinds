@@ -1,0 +1,35 @@
+{
+  "version": "1.3.2",
+  "target": "x86_64-pc-windows-gnu",
+  "download_url": "https://uhc-link.fr/assets/UHC-Link-Raccourcis.exe",
+  "verification_time_utc": "2026-11-16T15:34:20Z",
+  "verification_time": 1794843260,
+  "certificate_sha256": "3d54108863ba6fa0f3f2ddda2472b383b1c4902c9f5431a8c4e7f3380ad69893",
+  "certificate_file_sha256": "7b06ed96008036b40ea4dbde2dd677ceaadfa8283da397ceefb9e35fdf8230a2",
+  "artifacts": {
+    "runtime": {
+      "file": "runtime/UHC-Link-Raccourcis.exe",
+      "unsigned_sha256": "0674563c17fb3fad478c9ec8ece84cf274551586de609f411c60856c197c0e57",
+      "sha256": "4f3c919c2a5bdaad20e3e43a382066ef489128ece89ef068d0dd2f99469d9a00",
+      "bytes": 906768,
+      "signature": "signatures/runtime.p7b",
+      "signature_sha256": "a582dcc69c2beba3aefd6bb5253cf74d7b4580d1ab8a07c1332b8a327f87a0fc"
+    },
+    "uninstaller": {
+      "file": "Uninstall.exe",
+      "unsigned_sha256": "ed3d36f3674290316cbc4e90cbda5469add3fbc69eb69130bd24a9e3d24d6578",
+      "sha256": "eed429108523dca33d5522bcb6ae89ed8d0402d75b9bd2b8fde2025375ac90db",
+      "bytes": 127496,
+      "signature": "signatures/uninstaller.p7b",
+      "signature_sha256": "792290673e3647075b9e440758d839931f747a1787d03364f14f9655dcc482ab"
+    },
+    "installer": {
+      "file": "UHC-Link-Raccourcis.exe",
+      "unsigned_sha256": "544f88eb82d8379128d5795c2e083ac998c8e8ae76574db556bcab88c5565bec",
+      "sha256": "cfae2dcba5674952eb2790a8d4a148a4b10c1fdde4fa7090210c983c4699c083",
+      "bytes": 597432,
+      "signature": "signatures/installer.p7b",
+      "signature_sha256": "225d4c385bb023903703caa62540a36fc93eb2ded9ae1b2c8a79dccc1db73651"
+    }
+  }
+}

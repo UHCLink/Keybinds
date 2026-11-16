@@ -1,0 +1,37 @@
+#include <winres.h>
+
+// Ressources intégrées au runtime par build.rs. L'identifiant 1 est utilisé
+// par LoadIconW ; le manifeste conserve les permissions de l'utilisateur courant.
+1 RT_MANIFEST "app.manifest"
+1 ICON "app.ico"
+
+1 VERSIONINFO
+// Les marqueurs sont remplacés dans OUT_DIR ; jamais dans ce fichier source.
+FILEVERSION @VERSION_COMMA@
+PRODUCTVERSION @VERSION_COMMA@
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+FILEFLAGS 0
+FILEOS VOS_NT_WINDOWS32
+FILETYPE VFT_APP
+FILESUBTYPE 0
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040C04B0"
+    BEGIN
+      // Français (040C), Unicode (04B0). Ces informations déclarées ne remplacent
+      // pas la validation de l'identité de l'éditeur par une autorité de signature.
+      VALUE "CompanyName", "UHC-Link\0"
+      VALUE "FileDescription", "UHC-Link - Raccourcis clavier et souris\0"
+      VALUE "FileVersion", "@VERSION_DOT@\0"
+      VALUE "InternalName", "UHC-Link-Raccourcis\0"
+      VALUE "OriginalFilename", "UHC-Link-Raccourcis.exe\0"
+      VALUE "ProductName", "UHC-Link\0"
+      VALUE "ProductVersion", "@VERSION_DOT@\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x040c, 1200
+  END
+END

@@ -1,0 +1,48 @@
+[package]
+name = "uhc-link-companion"
+version = "1.3.2"
+edition = "2021"
+rust-version = "1.99"
+license = "MIT"
+
+[lib]
+name = "uhc_link_companion"
+
+[[bin]]
+name = "UHC-Link-Raccourcis"
+path = "src/main.rs"
+
+[dependencies]
+# JSON typé commun aux préférences et à l'API, pas de base de données distante.
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+# Découverte HTTP et commandes WebSocket locales, compatibilité HTTP conservée.
+axum = { version = "0.8", default-features = false, features = ["http1", "json", "query", "tokio", "ws"] }
+tokio = { version = "1.44", features = ["rt", "macros", "sync", "time", "net"] }
+# Même pile que Axum, avec limites explicites du transport HTTP local.
+hyper = { version = "1", default-features = false, features = ["http1", "server"] }
+hyper-util = { version = "0.1", default-features = false, features = ["tokio", "service"] }
+# OsRng génère les jetons éphémères, aucun générateur pseudo-aléatoire applicatif.
+rand = { version = "0.8", default-features = false, features = ["getrandom"] }
+
+[target.'cfg(windows)'.dependencies]
+# API Win32 classiques: messages, Raw Input, icône, lancement du désinstalleur.
+# La std Rust conserve ses dépendances normales pour threads, fichiers et réseau.
+anyhow = { version = "1.0", default-features = false }
+windows-sys = { version = "0.61.2", features = ["Win32_Foundation", "Win32_Graphics_Gdi", "Win32_UI_WindowsAndMessaging", "Win32_UI_Input", "Win32_UI_Input_KeyboardAndMouse", "Win32_UI_Shell", "Win32_System_LibraryLoader"] }
+
+[build-dependencies]
+toml = "0.8"
+
+[dev-dependencies]
+tempfile = "3.19"
+tower = { version = "0.5", features = ["util"] }
+http-body-util = "0.1"
+
+[profile.release]
+# Réduction de taille à la compilation, aucun packer ou obscurcissement ajouté.
+lto = true
+strip = true
+codegen-units = 1
+opt-level = "z"
+panic = "abort"
